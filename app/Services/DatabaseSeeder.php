@@ -97,7 +97,7 @@ class DatabaseSeeder
     {
         return [
             [
-                'image' => '/assets/images/placeholder-php.jpg',
+                'image' => '/assets/images/placeholder-php.svg',
                 'title' => 'PHP 8.2: что полезного в ежедневной работе',
                 'slug' => 'php-82-daily-features',
                 'description' => 'Короткий обзор возможностей PHP 8.2 для бэкенд-разработки.',
@@ -107,7 +107,7 @@ class DatabaseSeeder
                 'categories' => ['tech'],
             ],
             [
-                'image' => '/assets/images/placeholder-smarty.jpg',
+                'image' => '/assets/images/placeholder-smarty.svg',
                 'title' => 'Smarty без фреймворка: шаблоны и layout',
                 'slug' => 'smarty-templates-without-framework',
                 'description' => 'Как отделить логику отображения от контроллеров.',
@@ -117,7 +117,7 @@ class DatabaseSeeder
                 'categories' => ['tech'],
             ],
             [
-                'image' => '/assets/images/placeholder-docker.jpg',
+                'image' => '/assets/images/placeholder-docker.svg',
                 'title' => 'Docker для локального блога: nginx, php-fpm, mysql',
                 'slug' => 'docker-local-blog-stack',
                 'description' => 'Минимальный docker-compose для учебного проекта.',
@@ -127,7 +127,7 @@ class DatabaseSeeder
                 'categories' => ['tech', 'life'],
             ],
             [
-                'image' => '/assets/images/placeholder-mysql.jpg',
+                'image' => '/assets/images/placeholder-mysql.svg',
                 'title' => 'PDO и prepared statements в репозиториях',
                 'slug' => 'pdo-prepared-statements-repositories',
                 'description' => 'Почему SQL живёт только в Repository layer.',
@@ -137,7 +137,7 @@ class DatabaseSeeder
                 'categories' => ['tech'],
             ],
             [
-                'image' => '/assets/images/placeholder-router.jpg',
+                'image' => '/assets/images/placeholder-router.svg',
                 'title' => 'Самописный роутер для небольшого приложения',
                 'slug' => 'custom-router-small-app',
                 'description' => 'Статические и динамические маршруты без лишней сложности.',
@@ -147,7 +147,7 @@ class DatabaseSeeder
                 'categories' => ['tech'],
             ],
             [
-                'image' => '/assets/images/placeholder-berlin.jpg',
+                'image' => '/assets/images/placeholder-berlin.svg',
                 'title' => 'Выходные в Берлине: музеи и кофейни',
                 'slug' => 'weekend-in-berlin',
                 'description' => 'Маршрут на два дня без спешки.',
@@ -157,7 +157,7 @@ class DatabaseSeeder
                 'categories' => ['travel', 'life'],
             ],
             [
-                'image' => '/assets/images/placeholder-baltic.jpg',
+                'image' => '/assets/images/placeholder-baltic.svg',
                 'title' => 'Поездка на Балтику: что взять с собой',
                 'slug' => 'baltic-sea-packing-list',
                 'description' => 'Чек-лист для короткой поездки к морю.',
@@ -167,7 +167,7 @@ class DatabaseSeeder
                 'categories' => ['travel'],
             ],
             [
-                'image' => '/assets/images/placeholder-train.jpg',
+                'image' => '/assets/images/placeholder-train.svg',
                 'title' => 'Ночной поезд: как выспаться в плацкарте',
                 'slug' => 'sleeping-on-night-train',
                 'description' => 'Пара практичных советов из личного опыта.',
@@ -177,7 +177,7 @@ class DatabaseSeeder
                 'categories' => ['travel', 'life'],
             ],
             [
-                'image' => '/assets/images/placeholder-pasta.jpg',
+                'image' => '/assets/images/placeholder-pasta.svg',
                 'title' => 'Паста aglio e olio за 20 минут',
                 'slug' => 'pasta-aglio-e-olio',
                 'description' => 'Простой ужин из чеснока, оливкового масла и петрушки.',
@@ -187,7 +187,7 @@ class DatabaseSeeder
                 'categories' => ['food'],
             ],
             [
-                'image' => '/assets/images/placeholder-soup.jpg',
+                'image' => '/assets/images/placeholder-soup.svg',
                 'title' => 'Суп-пюре из тыквы: базовый рецепт',
                 'slug' => 'pumpkin-soup-recipe',
                 'description' => 'Мягкий суп на обед или лёгкий ужин.',
@@ -197,7 +197,7 @@ class DatabaseSeeder
                 'categories' => ['food', 'life'],
             ],
             [
-                'image' => '/assets/images/placeholder-bread.jpg',
+                'image' => '/assets/images/placeholder-bread.svg',
                 'title' => 'Домашний хлеб без замеса: no-knead',
                 'slug' => 'no-knead-bread',
                 'description' => 'Хрустящая корочка и воздушный мякиш.',
@@ -207,7 +207,7 @@ class DatabaseSeeder
                 'categories' => ['food'],
             ],
             [
-                'image' => '/assets/images/placeholder-habits.jpg',
+                'image' => '/assets/images/placeholder-habits.svg',
                 'title' => 'Утренние привычки разработчика',
                 'slug' => 'developer-morning-habits',
                 'description' => 'Как начать день без хаоса в задачах.',
@@ -217,7 +217,7 @@ class DatabaseSeeder
                 'categories' => ['life'],
             ],
             [
-                'image' => '/assets/images/placeholder-books.jpg',
+                'image' => '/assets/images/placeholder-books.svg',
                 'title' => 'Что читать про архитектуру приложений',
                 'slug' => 'books-about-app-architecture',
                 'description' => 'Небольшая подборка для junior и middle.',
@@ -227,7 +227,7 @@ class DatabaseSeeder
                 'categories' => ['life', 'tech'],
             ],
             [
-                'image' => '/assets/images/placeholder-walk.jpg',
+                'image' => '/assets/images/placeholder-walk.svg',
                 'title' => 'Почему прогулка помогает при отладке',
                 'slug' => 'walking-helps-debugging',
                 'description' => 'Смена контекста иногда важнее ещё одного var_dump.',

@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 use App\Controllers\HomeController;
 use App\Core\Application;
+use App\Core\Database;
 use App\Core\Request;
 use App\Core\Router;
 use App\Core\View;
+use App\Repositories\ConnectionRepository;
 use Dotenv\Dotenv;
 
 $root = dirname(__DIR__);
@@ -18,12 +20,17 @@ if (is_readable($root . '/.env')) {
 }
 
 $config = require $root . '/config/app.php';
+$databaseConfig = require $root . '/config/database.php';
 
 foreach ([$config['smarty_compile_dir'], $config['smarty_cache_dir']] as $directory) {
     if (!is_dir($directory) && !@mkdir($directory, 0775, true) && !is_dir($directory)) {
         throw new RuntimeException(sprintf('Unable to create directory: %s', $directory));
     }
 }
+
+$database = new Database($databaseConfig);
+
+$connectionRepository = new ConnectionRepository($database);
 
 $request = Request::fromGlobals();
 $view = new View(
@@ -34,7 +41,7 @@ $view = new View(
 );
 $router = new Router();
 
-$homeController = new HomeController($view);
+$homeController = new HomeController($view, $connectionRepository, $config['debug']);
 
 $router->get('/', [$homeController, 'index']);
 

@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+$command = $argv[1] ?? null;
+
+if ($command === 'seed') {
+    require __DIR__ . '/bootstrap/seed.php';
+    exit(0);
+}
+
+fwrite(STDERR, "Unknown command.\n");
+fwrite(STDERR, "Usage: php cli seed\n");
+exit(1);

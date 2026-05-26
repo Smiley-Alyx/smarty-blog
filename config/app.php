@@ -8,4 +8,5 @@ return [
     'templates_path' => dirname(__DIR__) . '/templates',
     'smarty_compile_dir' => dirname(__DIR__) . '/' . ltrim((string) ($_ENV['SMARTY_COMPILE_DIR'] ?? 'var/smarty/compile'), '/'),
     'smarty_cache_dir' => dirname(__DIR__) . '/' . ltrim((string) ($_ENV['SMARTY_CACHE_DIR'] ?? 'var/smarty/cache'), '/'),
+    'articles_per_page' => max(1, (int) ($_ENV['ARTICLES_PER_PAGE'] ?? 10)),
 ];

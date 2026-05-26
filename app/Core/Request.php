@@ -6,10 +6,15 @@ namespace App\Core;
 
 final class Request
 {
+    /**
+     * @param array<string, mixed> $query
+     * @param array<string, string> $params
+     */
     public function __construct(
         public readonly string $method,
         public readonly string $uri,
         public readonly array $query,
+        public readonly array $params = [],
     ) {
     }
 
@@ -25,6 +30,11 @@ final class Request
         );
     }
 
+    public function withParams(array $params): self
+    {
+        return new self($this->method, $this->uri, $this->query, $params);
+    }
+
     public function path(): string
     {
         return $this->uri;
@@ -33,5 +43,10 @@ final class Request
     public function query(string $key, mixed $default = null): mixed
     {
         return $this->query[$key] ?? $default;
+    }
+
+    public function param(string $key, mixed $default = null): mixed
+    {
+        return $this->params[$key] ?? $default;
     }
 }

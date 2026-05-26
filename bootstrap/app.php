@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Controllers\CategoryController;
 use App\Controllers\HomeController;
 use App\Core\Application;
 use App\Core\Database;
@@ -42,7 +43,13 @@ $view = new View(
 $router = new Router();
 
 $homeController = new HomeController($view, $categoryRepository);
+$categoryController = new CategoryController(
+    $view,
+    $categoryRepository,
+    $config['articles_per_page'],
+);
 
 $router->get('/', [$homeController, 'index']);
+$router->get('/category/{slug}', [$categoryController, 'show']);
 
 return new Application($router, $request);

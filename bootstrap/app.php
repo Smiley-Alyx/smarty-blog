@@ -1,0 +1,41 @@
+<?php
+
+declare(strict_types=1);
+
+use App\Controllers\HomeController;
+use App\Core\Application;
+use App\Core\Request;
+use App\Core\Router;
+use App\Core\View;
+use Dotenv\Dotenv;
+
+$root = dirname(__DIR__);
+
+require $root . '/vendor/autoload.php';
+
+if (is_readable($root . '/.env')) {
+    Dotenv::createImmutable($root)->safeLoad();
+}
+
+$config = require $root . '/config/app.php';
+
+foreach ([$config['smarty_compile_dir'], $config['smarty_cache_dir']] as $directory) {
+    if (!is_dir($directory) && !@mkdir($directory, 0775, true) && !is_dir($directory)) {
+        throw new RuntimeException(sprintf('Unable to create directory: %s', $directory));
+    }
+}
+
+$request = Request::fromGlobals();
+$view = new View(
+    $config['templates_path'],
+    $config['smarty_compile_dir'],
+    $config['smarty_cache_dir'],
+    $config['debug'],
+);
+$router = new Router();
+
+$homeController = new HomeController($view);
+
+$router->get('/', [$homeController, 'index']);
+
+return new Application($router, $request);

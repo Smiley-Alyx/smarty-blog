@@ -1,0 +1,181 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+  line-height: 1.55;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+a:hover {
+  color: #1d4ed8;
+}
+
+.site-header,
+.site-footer {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.site-footer {
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 0;
+}
+
+.site-header__inner,
+.site-main,
+.site-footer__inner {
+  width: min(1040px, 100% - 2rem);
+  margin: 0 auto;
+}
+
+.site-header__inner,
+.site-footer__inner {
+  padding: 1rem 0;
+}
+
+.site-brand {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.site-main {
+  padding: 1.5rem 0 2.5rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  margin: 0 0 0.6rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+.category-section,
+.article-detail,
+.related-articles {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.category-description,
+.article-detail__description,
+.article-meta,
+.empty-state {
+  color: #6b7280;
+}
+
+.article-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.article-card {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0.9rem;
+  align-items: start;
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+
+.article-card__image,
+.article-detail__image {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.article-card__image {
+  height: 84px;
+}
+
+.article-detail__image {
+  max-height: 340px;
+  margin-bottom: 1rem;
+}
+
+.btn,
+.sort-controls a,
+.pagination a,
+.article-categories a {
+  display: inline-block;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 0.38rem 0.7rem;
+  color: #1f2937;
+  font-size: 0.92rem;
+}
+.btn:hover,
+.sort-controls a:hover,
+.pagination a:hover,
+.article-categories a:hover {
+  border-color: #cbd5e1;
+  background: #f3f4f6;
+}
+
+.sort-controls,
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.sort-controls .is-active {
+  background: #dbeafe;
+  border-color: #93c5fd;
+}
+
+.breadcrumbs {
+  margin-bottom: 1rem;
+  color: #6b7280;
+}
+.breadcrumbs span {
+  margin: 0 0.35rem;
+}
+
+.article-categories {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.article-detail__body {
+  margin-top: 1rem;
+}
+
+@media (max-width: 720px) {
+  .article-card {
+    grid-template-columns: 1fr;
+  }
+  .article-card__image {
+    height: 180px;
+  }
+}

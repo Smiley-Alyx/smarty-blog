@@ -10,6 +10,14 @@ if ($command === 'seed') {
     exit(0);
 }
 
+if ($command === 'build-css') {
+    $script = __DIR__ . '/scripts/build-css.sh';
+    passthru('sh ' . escapeshellarg($script), $exitCode);
+    exit($exitCode);
+}
+
 fwrite(STDERR, "Unknown command.\n");
-fwrite(STDERR, "Usage: php cli seed\n");
+fwrite(STDERR, "Usage:\n");
+fwrite(STDERR, "  php cli seed\n");
+fwrite(STDERR, "  php cli build-css\n");
 exit(1);

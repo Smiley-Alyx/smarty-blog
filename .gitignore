@@ -29,3 +29,4 @@ Thumbs.db
 /public/assets/css/*.css
 /public/assets/css/*.css.map
 !public/assets/css/.gitkeep
+!public/assets/css/style.css

@@ -1,0 +1,19 @@
+{
+    "name": "smarty-blog/blog",
+    "description": "Simple blog on PHP, MySQL and Smarty",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

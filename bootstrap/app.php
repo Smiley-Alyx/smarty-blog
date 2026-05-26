@@ -8,7 +8,7 @@ use App\Core\Database;
 use App\Core\Request;
 use App\Core\Router;
 use App\Core\View;
-use App\Repositories\ConnectionRepository;
+use App\Repositories\CategoryRepository;
 use Dotenv\Dotenv;
 
 $root = dirname(__DIR__);
@@ -30,7 +30,7 @@ foreach ([$config['smarty_compile_dir'], $config['smarty_cache_dir']] as $direct
 
 $database = new Database($databaseConfig);
 
-$connectionRepository = new ConnectionRepository($database);
+$categoryRepository = new CategoryRepository($database);
 
 $request = Request::fromGlobals();
 $view = new View(
@@ -41,7 +41,7 @@ $view = new View(
 );
 $router = new Router();
 
-$homeController = new HomeController($view, $connectionRepository, $config['debug']);
+$homeController = new HomeController($view, $categoryRepository);
 
 $router->get('/', [$homeController, 'index']);
 

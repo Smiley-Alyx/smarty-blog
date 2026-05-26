@@ -2,20 +2,11 @@
 
 declare(strict_types=1);
 
-use App\Core\Database;
 use App\Services\DatabaseSeeder;
-use Dotenv\Dotenv;
 
-$root = dirname(__DIR__);
+/** @var \App\Core\Container $container */
+$container = require __DIR__ . '/container.php';
 
-require $root . '/vendor/autoload.php';
-
-if (is_readable($root . '/.env')) {
-    Dotenv::createImmutable($root)->safeLoad();
-}
-
-$database = new Database(require $root . '/config/database.php');
-
-(new DatabaseSeeder($database))->run();
+$container->get(DatabaseSeeder::class)->run();
 
 echo "Database seeded successfully.\n";
